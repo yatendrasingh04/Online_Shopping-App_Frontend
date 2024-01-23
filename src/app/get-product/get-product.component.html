@@ -1,0 +1,80 @@
+<!--<p>{{posts|json}}</p>-->
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Stolk</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Adding to Cart</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let i of posts">
+                <th>{{i.id}}</th>
+                <td>{{i.name}}</td>
+                <td>
+                    <h3>{{i.stk}}</h3>
+                </td>
+                <td>
+                    <h3>{{i.price}}</h3>
+                </td>
+                <td><input type="number" name="qty" id=i.id [(ngModel)]="qty"></td>
+                <td><button type="submit" (click)="onaddToCart(i.id, i.name,i.price)">Add to Cart</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<!--<p>{{posts|json}}</p>-->
+
+
+
+
+
+<div class="container bg-warning p-3">
+    <form>
+        <label>Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="cust.name" class="form-control" /><br><br>
+        <label>Contact No:</label>
+        <input type="number" id="phone" name="phone" [(ngModel)]="cust.phone" class="form-control" /><br><br>
+        <button type="submit" (click)="PlaceOrder()" class="btn btn-primary">Place Order</button>
+    </form>
+</div>
+
+
+<!--<p>{{cust|json}}</p>-->
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of cart1">
+                <th>{{i.prodid}}</th>
+                <td>{{i.name}}</td>
+                <td>
+                    <h3>{{i.price}}</h3>
+                </td>
+                <td>
+                    <h3>{{i.qty}}</h3>
+                </td>
+                <td>
+                    <h3>{{i.total}}</h3>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<h1>Bill Amount: {{total}}</h1>

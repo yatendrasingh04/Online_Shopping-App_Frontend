@@ -1,0 +1,42 @@
+<p>adminproduct</p>
+<div>
+    <table class="table table-striped table-bordered ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Stolk</th>
+                <th>Price</th>
+                <th>Update</th>
+                <th>Delete Item</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let i of posts">
+                <th>{{i.id}}</th>
+                <td><input type="type" [(ngModel)]="i.name" /></td>
+                <td>
+                    <h3><input type="number" [(ngModel)]="i.stk" /></h3>
+                </td>
+                <td>
+                    <h3><input type="number" [(ngModel)]="i.price" /></h3>
+                </td>
+
+
+                <td><button type="submit" (click)="update(i.id,i.name,i.stk,i.price)">Update</button></td>
+                <td><button type="submit" (click)="delete(i.id)">Delete</button></td>
+
+            </tr>
+            <tr>
+                <td><input type="number" /></td>
+                <td><input type="text" [(ngModel)]="model2.name" /></td>
+                <td><input type="number" [(ngModel)]="model2.stk" /></td>
+                <td><input type="number" [(ngModel)]="model2.price" /></td>
+                <td><button type="submit" (click)="create(model2)">Add</button></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
